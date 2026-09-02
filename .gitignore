@@ -1,3 +1,10 @@
+# ─────────────────────────────────────────────────────────────
+# Sat-Yukt monorepo — shared ignores
+#   website/  → React + Vite site
+#   mobile/   → Expo React Native app (+ its own Node backend)
+#   backend/  → FastAPI (Python) backend
+# ─────────────────────────────────────────────────────────────
+
 # Logs
 logs
 *.log
@@ -7,14 +14,45 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-.env
-.claude/
+# Dependencies (any level)
+node_modules/
 
-# Editor directories and files
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+**/.env
+!**/.env.example
+
+# ── website / build output ──
+dist/
+dist-ssr/
+*.local
+website/dist/
+
+# ── mobile / Expo ──
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+mobile/android/
+mobile/ios/
+
+# ── backend / Python ──
+backend/venv/
+backend/__pycache__/
+**/__pycache__/
+*.py[cod]
+backend/*.db
+backend/sat_yukt.db
+
+# ── tooling / editors ──
+.claude/
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -24,3 +62,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large binaries that shouldn't be tracked
+cloudflared.exe
+*.exe

@@ -103,31 +103,57 @@ The LLM is **never** asked to verify a claim without matching evidence — below
 
 ## Repository layout
 
+This repo holds **three independently-runnable projects**, kept in separate
+top-level folders so the website and the mobile app never share build tooling,
+`node_modules`, or config:
+
 ```
 Sat-Yukt/
-├── src/                    # Frontend (React + Vite)
-│   ├── pages/               Home.jsx · Result.jsx · History.jsx
-│   ├── components/          MicButton, VerdictCard, ChannelCards, etc.
-│   ├── context/              ClaimContext · ThemeContext
-│   ├── lib/                  api.js · speech.js · ocr.js · relativeTime.js
-│   ├── i18n/                 5 locale files (en, hi, ta, te, bn)
-│   └── styles/tokens.css     Design token palette (light + dark)
+├── website/                # Website (React 19 + Vite)  — see website/
+│   ├── src/
+│   │   ├── pages/            Home.jsx · Result.jsx · History.jsx
+│   │   ├── components/       MicButton, VerdictCard, ChannelCards, etc.
+│   │   ├── context/          ClaimContext · ThemeContext
+│   │   ├── lib/              api.js · speech.js · ocr.js · relativeTime.js
+│   │   ├── i18n/             5 locale files (en, hi, ta, te, bn)
+│   │   └── styles/tokens.css Design token palette (light + dark)
+│   ├── index.html · vite.config.js · package.json
 │
-├── backend/                 # Backend (FastAPI)
-│   ├── main.py                App entrypoint, CORS, route registration
-│   ├── routes/                 verify.py · whatsapp_greenapi.py · whatsapp.py
+├── mobile/                 # Mobile app (Expo / React Native + TypeScript)
+│   ├── App.tsx · app.config.ts
+│   ├── src/
+│   │   ├── screens/          Home · History · onboarding/ · settings/
+│   │   ├── components/       MicButton, VerdictCard, SchemesCard, ui/
+│   │   ├── navigation/       Onboarding + Main stack navigators
+│   │   ├── services/         apiClient, voiceService, twilioService, …
+│   │   ├── localization/     languages.ts · strings.ts
+│   │   └── theme/            fonts.ts
+│   ├── backend/             Node/Express backend for the mobile app only
+│   │   ├── server.js         Twilio (OTP/SMS/IVR) + STT proxy
+│   │   └── services/         geminiProvider · googleSttProvider · twilio*
+│   └── SETUP.md             Full mobile setup guide
+│
+├── backend/                # Shared verification backend (FastAPI / Python)
+│   ├── main.py               App entrypoint, CORS, route registration
+│   ├── routes/               verify.py · whatsapp_greenapi.py · whatsapp.py
 │   ├── services/
-│   │   ├── verify_service.py   FastAPI-facing adapter (async, timeout, DB)
-│   │   ├── ai_verify.py         AI layer orchestration
-│   │   ├── retrieval.py         ClaimRetriever (embedding similarity search)
-│   │   └── confidence.py        Confidence scoring from similarity
+│   │   ├── verify_service.py FastAPI-facing adapter (async, timeout, DB)
+│   │   ├── ai_verify.py      AI layer orchestration
+│   │   ├── retrieval.py      ClaimRetriever (embedding similarity search)
+│   │   └── confidence.py     Confidence scoring from similarity
 │   ├── data/
-│   │   ├── claims.json          18 curated misinformation/verified claims
-│   │   └── master_prompt.txt    The exact LLM prompt (do not rewrite its rules)
-│   └── models/                  db_models.py · schemas.py
+│   │   ├── claims.json       18 curated misinformation/verified claims
+│   │   └── master_prompt.txt The exact LLM prompt (do not rewrite its rules)
+│   └── models/               db_models.py · schemas.py
 │
-└── README.md                 (this file)
+└── README.md                (this file)
 ```
+
+**Which backend is which?** `backend/` (FastAPI) is the core claim-verification
+service used by the website. `mobile/backend/` (Node) is a thin phone-facing
+proxy that additionally handles Twilio OTP, SMS fallback, the voice-IVR channel,
+and speech-to-text — things the website does client-side in the browser. The two
+can be consolidated later; for now the mobile app is self-contained.
 
 ---
 
@@ -154,9 +180,10 @@ Sat-Yukt/
 
 ## Getting started
 
-### Frontend
+### Website (`website/`)
 
 ```bash
+cd website
 npm install
 cp .env.example .env      # set VITE_API_BASE_URL to the backend's URL
 npm run dev
@@ -164,7 +191,20 @@ npm run dev
 
 If the backend is unreachable, the app still runs — failed checks show a calm inline error instead of crashing.
 
-### Backend
+### Mobile app (`mobile/`)
+
+```bash
+cd mobile
+npm install
+cp .env.example .env             # set EXPO_PUBLIC_BACKEND_URL to your LAN IP
+cd backend && npm install && cp .env.example .env   # set GEMINI_API_KEY, Twilio, etc.
+npm start                        # in mobile/backend/ — starts the Node proxy
+cd .. && npx expo start          # in mobile/ — opens Expo, scan the QR with Expo Go
+```
+
+Full details, Twilio/STT setup, and the voice-IVR channel are in [`mobile/SETUP.md`](mobile/SETUP.md).
+
+### Verification backend (`backend/`)
 
 ```bash
 cd backend
