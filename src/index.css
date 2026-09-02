@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+@theme {
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-bg-muted: var(--bg-muted);
+  --color-bg-soft-tan: var(--bg-soft-tan);
+  --color-bg-hero: var(--bg-hero);
+
+  --color-green: var(--green);
+  --color-green-hover: var(--green-hover);
+  --color-green-tint: var(--green-tint);
+  --color-green-deep: var(--green-deep);
+
+  --color-amber: var(--amber);
+  --color-amber-tint: var(--amber-tint);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-on-hero: var(--text-on-hero);
+  --color-text-on-hero-muted: var(--text-on-hero-muted);
+  --color-border: var(--border);
+
+  --color-verdict-true: var(--verdict-true);
+  --color-verdict-misleading: var(--verdict-misleading);
+  --color-verdict-false: var(--verdict-false);
+  --color-verdict-unverifiable: var(--verdict-unverifiable);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

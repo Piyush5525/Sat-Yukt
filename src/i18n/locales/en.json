@@ -1,0 +1,194 @@
+{
+  "brand": "Sat-Yukt",
+  "header": {
+    "logoAlt": "Sat-Yukt",
+    "nav": {
+      "how": "How it works",
+      "verify": "Verify a claim",
+      "about": "About",
+      "history": "Recent checks"
+    },
+    "themeToggle": {
+      "toLight": "Switch to light mode",
+      "toDark": "Switch to dark mode"
+    },
+    "cta": "Check a message"
+  },
+  "languageGrid": {
+    "ariaLabel": "Your language",
+    "names": {
+      "hi": "हिंदी",
+      "ta": "தமிழ்",
+      "te": "తెలుగు",
+      "bn": "বাংলা",
+      "en": "English"
+    }
+  },
+  "inputModes": {
+    "ariaLabel": "Choose how to ask",
+    "speak": "Speak",
+    "photo": "Photo",
+    "type": "Type"
+  },
+  "micButton": {
+    "idleLabel": "Tap to speak",
+    "recordingLabel": "Stop recording",
+    "processingLabel": "Checking your message",
+    "idle": "Speak",
+    "recording": "Listening",
+    "processing": "Checking"
+  },
+  "home": {
+    "pills": {
+      "free": "✓ Free to use",
+      "languages": "✓ Works in 8+ languages",
+      "noSignup": "✓ No sign-up needed"
+    },
+    "heroTitle": "Not sure if it's true? Ask before you believe it.",
+    "heroLead": "Sat-Yukt checks messages, forwards, and voice notes against trusted sources — and tells you plainly, in your own language, whether to trust them.",
+    "speakYourDoubt": "Speak your doubt",
+    "orTypeInstead": "or type a message instead",
+    "stats": {
+      "claimsChecked": "Claims checked",
+      "languagesSupported": "Languages supported",
+      "trustworthy": "Users found it trustworthy"
+    },
+    "inputCard": {
+      "label": "Ask Sat-Yukt right now",
+      "typeLabel": "Type your message",
+      "placeholder": "Paste or type the message you want to check…",
+      "checking": "Checking…",
+      "submit": "Check this message",
+      "photoUpload": "Upload a photo",
+      "photoChange": "Choose a different photo",
+      "photoHint": "Choose a screenshot or photo of the message you want to check.",
+      "photoReading": "Reading the photo…",
+      "photoReadingProgress": "Reading the photo… {{percent}}%",
+      "photoExtractedLabel": "Text found in the photo",
+      "photoExtractedHint": "You can edit this before checking, if anything looks wrong.",
+      "photoNoTextFound": "We could not find any readable text in this photo. Try a clearer photo, or type the message instead."
+    },
+    "errors": {
+      "voiceUnsupported": "Voice input is not supported in this browser. Please type your message instead.",
+      "micBlocked": "Microphone access was blocked. Please allow microphone access and try again.",
+      "couldNotHear": "We could not hear that clearly. Please try again.",
+      "generic": "Something went wrong. Please try again.",
+      "networkError": "Could not reach Sat-Yukt right now. Check your connection and try again.",
+      "serverError": "Sat-Yukt could not check that (error {{status}}). Please try again.",
+      "notAnImage": "That file is not a photo. Please choose an image file (JPG, PNG, etc).",
+      "photoTooLarge": "That photo is too large. Please choose one under 10MB.",
+      "ocrFailed": "We could not read this photo. Please try a clearer photo, or type the message instead."
+    },
+    "howItWorks": {
+      "eyebrow": "How it works",
+      "title": "Four steps, one honest answer",
+      "lead": "No account, no jargon — just a plain answer with a reason behind it.",
+      "steps": [
+        { "title": "Share the message", "desc": "Speak it, type it, or upload a screenshot of the forward you received." },
+        { "title": "We check the sources", "desc": "Compared against government portals, verified fact-checkers, and past reports." },
+        { "title": "Get a plain verdict", "desc": "True, false, misleading, or honestly unverifiable — with a confidence score." },
+        { "title": "Listen, or share it", "desc": "Every result can be read aloud, and flagged to help your community too." }
+      ]
+    },
+    "verdictDemo": {
+      "eyebrow": "What you'll see",
+      "title": "A verdict you don't need to read to understand",
+      "lead": "Color, icon, and voice all say the same thing — so literacy is never the barrier.",
+      "badge": "Likely false",
+      "confidence": "87% confidence",
+      "claim": "\"You forwarded: a message claiming a new government scheme gives ₹50,000 to every household that shares this link.\"",
+      "explanation": "This is a known scam pattern. No such scheme exists on any official government portal. Messages asking you to share a link to \"claim money\" are almost always fraudulent.",
+      "source": "Checked against PIB Fact Check",
+      "readAloud": "Read aloud",
+      "flagAsSuspicious": "Flag as suspicious",
+      "legend": {
+        "true": { "label": "Verified true", "desc": "Confirmed by an official or trusted source" },
+        "misleading": { "label": "Misleading", "desc": "Partly true, but missing important context" },
+        "false": { "label": "Likely false", "desc": "Contradicted by trusted sources" },
+        "unverifiable": { "label": "Unverifiable", "desc": "Not enough evidence — we say so honestly, never a guess" }
+      }
+    },
+    "trustCards": {
+      "eyebrow": "Built for everyone",
+      "title": "Designed so literacy is never a barrier",
+      "cards": [
+        { "title": "Voice comes first", "desc": "One large mic button, front and center — speaking is always the fastest way in." },
+        { "title": "Every answer is read aloud", "desc": "Results are never text-only — a tap on the speaker reads the verdict out loud." },
+        { "title": "Language in its own script", "desc": "Pick हिंदी or தமிழ், not \"Hindi\" in English — no reading a second language to choose the first." }
+      ]
+    },
+    "channelCards": {
+      "eyebrow": "More ways to check",
+      "title": "Reach us however is easiest",
+      "whatsapp": {
+        "heading": "Message us on WhatsApp",
+        "desc": "Forward any suspicious message directly. No app to download, no typing needed.",
+        "button": "Open WhatsApp",
+        "buttonAriaLabel": "Open WhatsApp chat with Sat-Yukt",
+        "qrAlt": "QR code to open WhatsApp chat with Sat-Yukt"
+      },
+      "call": {
+        "heading": "Call and speak your question",
+        "desc": "No smartphone needed. Call, listen, and speak — we'll answer out loud.",
+        "button": "Call {{number}}",
+        "buttonAriaLabel": "Call Sat-Yukt phone line"
+      }
+    },
+    "footer": {
+      "tagline": "Truth that reaches everyone · सच जानें, सुरक्षित रहें"
+    }
+  },
+  "result": {
+    "goBack": "Go back",
+    "ready": "Your check is ready",
+    "title": "We found an answer",
+    "checkAnother": "Check another message",
+    "footnote": "Sat-Yukt uses trusted public sources. If we cannot verify something, we will say so clearly."
+  },
+  "verdictCard": {
+    "verdictLabel": "Verdict",
+    "confidence": "Confidence",
+    "inSimpleWords": "In simple words",
+    "listen": "Listen to this answer",
+    "stopListening": "Stop listening",
+    "labels": {
+      "true": "True",
+      "misleading": "Misleading",
+      "false": "False",
+      "unverifiable": "Unverifiable"
+    },
+    "descriptions": {
+      "true": "This is correct.",
+      "misleading": "Some parts are not correct.",
+      "false": "This is not true.",
+      "unverifiable": "We don’t have enough evidence to be sure."
+    }
+  },
+  "sourceCard": {
+    "checkedWith": "Checked with",
+    "viewSource": "View source"
+  },
+  "actionCard": {
+    "title": "What to do now",
+    "text": {
+      "true": "You can share this safely — it is confirmed correct.",
+      "misleading": "Do not forward this message. Tell the person who sent it that it may confuse others.",
+      "false": "Do not forward this message. Tell the person who sent it that it is false.",
+      "unverifiable": "We could not confirm this. Avoid sharing it until a trusted source verifies it."
+    }
+  },
+  "shareFlag": {
+    "shareAnswer": "Share answer",
+    "flagSuspicious": "Flag suspicious",
+    "flagged": "Flagged",
+    "tryAgain": "Try again",
+    "shareText": "Sat-Yukt checked this: {{verdict}} — {{explanation}}"
+  },
+  "history": {
+    "eyebrow": "Community",
+    "title": "Recently checked messages",
+    "lead": "See what others have asked Sat-Yukt to check — the newest 20, updated live.",
+    "loading": "Loading recent checks…",
+    "empty": "No messages have been checked yet. Be the first — check a message above."
+  }
+}

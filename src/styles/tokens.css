@@ -1,0 +1,56 @@
+:root {
+  --bg-page: #FAF6EF;
+  --bg-card: #FFFFFF;
+  --bg-muted: #EFE9DC;
+  --bg-soft-tan: #E7DFCC;
+  --bg-hero: #1E2A22;
+
+  --green: #3F7A4E;
+  --green-hover: #2F5E3B;
+  --green-tint: #E3EFE3;
+  --green-deep: #234E2E;
+
+  --amber: #D3922E;
+  --amber-tint: #FBF0DD;
+
+  --text-primary: #201E1A;
+  --text-secondary: #6C6A62;
+  --text-on-hero: #F4F1E8;
+  --text-on-hero-muted: #C9CFC5;
+  --border: #E2DCC9;
+
+  --verdict-true: #3F7A4E;
+  --verdict-misleading: #D3922E;
+  --verdict-false: #C0392E;
+  --verdict-unverifiable: #8C8578;
+
+  --font-display: 'Georgia', 'Noto Serif', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-page: #14231A;
+  --bg-card: #1D2E22;
+  --bg-muted: #1A2B1F;
+  --bg-soft-tan: #26332A;
+  --bg-hero: #0C1610;
+
+  --green: #5FAE73;
+  --green-hover: #4C8F5E;
+  --green-tint: #223A2A;
+  --green-deep: #A8D9B6;
+
+  --amber: #E8AC4F;
+  --amber-tint: #33290F;
+
+  --text-primary: #EDEAE0;
+  --text-secondary: #A6A99E;
+  --text-on-hero: #F4F1E8;
+  --text-on-hero-muted: #A9B3A3;
+  --border: #33473A;
+
+  --verdict-true: #5FAE73;
+  --verdict-misleading: #E8AC4F;
+  --verdict-false: #E0645A;
+  --verdict-unverifiable: #A6A093;
+}

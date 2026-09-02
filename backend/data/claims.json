@@ -1,0 +1,182 @@
+[
+  {
+    "id": "claim_001",
+    "claim_text": "PM Kisan Samman Nidhi gives eligible farmers Rs 6000 per year in three installments directly to their bank account",
+    "language": "en",
+    "verdict": "true",
+    "category": "government_scheme",
+    "explanation": "This is a real government scheme. Eligible farmers receive Rs 2000 every four months directly in their bank account, verified through the official PM-Kisan portal.",
+    "source_name": "PM-Kisan Official Portal (Government of India)",
+    "source_url": "https://pmkisan.gov.in"
+  },
+  {
+    "id": "claim_002",
+    "claim_text": "Ayushman Bharat scheme provides free health insurance coverage of Rs 5 lakh per family per year for hospital treatment",
+    "language": "en",
+    "verdict": "true",
+    "category": "government_scheme",
+    "explanation": "This is a real government health scheme. Eligible families get free treatment up to Rs 5 lakh per year at listed hospitals, confirmed by the National Health Authority.",
+    "source_name": "Ayushman Bharat / National Health Authority",
+    "source_url": "https://nha.gov.in"
+  },
+  {
+    "id": "claim_003",
+    "claim_text": "A WhatsApp message says the government is giving free smartphones to all women, click this link to register with your bank details",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_scheme",
+    "explanation": "There is no such national scheme giving free smartphones. This is a fake link designed to steal your bank information. Do not click this link or share your details.",
+    "source_name": "PIB Fact Check",
+    "source_url": "https://factcheck.pib.gov.in"
+  },
+  {
+    "id": "claim_004",
+    "claim_text": "Message claims your bank account will be blocked in 24 hours unless you update your KYC by clicking this link and entering your account number and OTP",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_kyc_scam",
+    "explanation": "This is a fake message designed to steal your bank details. Real banks never ask for your OTP or password through a link. Do not click this link or share your OTP with anyone.",
+    "source_name": "RBI Public Advisory",
+    "source_url": "https://rbi.org.in"
+  },
+  {
+    "id": "claim_005",
+    "claim_text": "A forwarded message says you can convert your old currency notes for gold at a government gold exchange scheme, just deposit a small processing fee first",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_scheme",
+    "explanation": "There is no such gold exchange scheme from the government. This is a scam asking you to pay money upfront that you will never get back. Do not send any money.",
+    "source_name": "PIB Fact Check",
+    "source_url": "https://factcheck.pib.gov.in"
+  },
+  {
+    "id": "claim_006",
+    "claim_text": "Drinking cow urine or hot water with turmeric cures COVID-19 completely and you do not need any hospital treatment",
+    "language": "en",
+    "verdict": "false",
+    "category": "health_misinformation",
+    "explanation": "There is no scientific proof that this cures COVID-19. Please follow advice from a real doctor or government health worker, especially if you feel very unwell.",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://mohfw.gov.in"
+  },
+  {
+    "id": "claim_007",
+    "claim_text": "Message says PM Awas Yojana gives every citizen a free house with no application needed, just share your Aadhaar number on this WhatsApp number to claim it",
+    "language": "en",
+    "verdict": "misleading",
+    "category": "misleading_scheme",
+    "explanation": "PM Awas Yojana is a real housing scheme, but it requires an official application process, not a WhatsApp message. Sharing your Aadhaar number here is unsafe and this is likely a scam using a real scheme's name.",
+    "source_name": "PIB Fact Check",
+    "source_url": "https://factcheck.pib.gov.in"
+  },
+  {
+    "id": "claim_008",
+    "claim_text": "A video is circulating claiming the Finance Minister personally guarantees huge returns if you invest in this new mobile trading app",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_scheme",
+    "explanation": "This video is fake and was made using AI to imitate the Finance Minister's voice and face. No government official promotes private investment apps like this. Do not invest money based on this video.",
+    "source_name": "PIB Fact Check",
+    "source_url": "https://factcheck.pib.gov.in"
+  },
+  {
+    "id": "claim_009",
+    "claim_text": "Message claims that eating garlic on an empty stomach for seven days can cure diabetes permanently",
+    "language": "en",
+    "verdict": "false",
+    "category": "health_misinformation",
+    "explanation": "There is no medical proof that garlic cures diabetes. Please continue any medicine prescribed by your doctor and do not stop treatment based on this message.",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://mohfw.gov.in"
+  },
+  {
+    "id": "claim_010",
+    "claim_text": "Sukanya Samriddhi Yojana lets parents open a savings account for a girl child with government-guaranteed high interest until she turns 21",
+    "language": "en",
+    "verdict": "true",
+    "category": "government_scheme",
+    "explanation": "This is a real government savings scheme for girl children, offering guaranteed interest until the account matures. It can be opened at any post office or authorized bank.",
+    "source_name": "Ministry of Finance",
+    "source_url": "https://www.india.gov.in"
+  },
+  {
+    "id": "claim_011",
+    "claim_text": "A message says your electricity connection will be cut tonight unless you pay your bill immediately through a link sent on WhatsApp",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_kyc_scam",
+    "explanation": "Electricity boards do not send disconnection warnings with payment links through WhatsApp. This is a scam link designed to steal your money. Pay your bill only through your official electricity board app or office.",
+    "source_name": "PIB Fact Check",
+    "source_url": "https://factcheck.pib.gov.in"
+  },
+  {
+    "id": "claim_012",
+    "claim_text": "Message says the government is giving Rs 2 lakh to every unemployed youth under a new scheme, apply by sending your bank passbook photo to this number",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_scheme",
+    "explanation": "There is no such scheme giving direct cash to unemployed youth this way. Sending your bank passbook photo to an unknown number is unsafe and can lead to fraud. Do not share this information.",
+    "source_name": "PIB Fact Check",
+    "source_url": "https://factcheck.pib.gov.in"
+  },
+  {
+    "id": "claim_013",
+    "claim_text": "Jan Dhan Yojana allows people to open a bank account with zero balance and get some basic accident insurance coverage",
+    "language": "en",
+    "verdict": "true",
+    "category": "government_scheme",
+    "explanation": "This is a real government scheme. People can open a zero-balance bank account and get basic accident insurance coverage as part of it, through any participating bank.",
+    "source_name": "Ministry of Finance / PMJDY",
+    "source_url": "https://pmjdy.gov.in"
+  },
+  {
+    "id": "claim_014",
+    "claim_text": "A forwarded voice note claims that a new law bans farmers from selling crops directly to anyone except the government, starting next week",
+    "language": "en",
+    "verdict": "misleading",
+    "category": "misleading_scheme",
+    "explanation": "This message twists real agricultural policy discussions into a false and alarming claim. There is no such sudden nationwide ban starting next week. Check official agriculture ministry announcements before believing this.",
+    "source_name": "Ministry of Agriculture and Farmers Welfare",
+    "source_url": "https://agriculture.gov.in"
+  },
+  {
+    "id": "claim_015",
+    "claim_text": "Message says scanning this QR code will instantly add Rs 5000 as a government COVID relief payment to your account",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_kyc_scam",
+    "explanation": "Scanning a QR code can only send money out of your account, never add money into it. This is a common scam trick. Do not scan this code.",
+    "source_name": "RBI Public Advisory",
+    "source_url": "https://rbi.org.in"
+  },
+  {
+    "id": "claim_016",
+    "claim_text": "PM Ujjwala Yojana provides free LPG gas connections to women from below poverty line households",
+    "language": "en",
+    "verdict": "true",
+    "category": "government_scheme",
+    "explanation": "This is a real government scheme providing free LPG connections to eligible women from poor households, run through the Ministry of Petroleum and Natural Gas.",
+    "source_name": "Ministry of Petroleum and Natural Gas",
+    "source_url": "https://pmuy.gov.in"
+  },
+  {
+    "id": "claim_017",
+    "claim_text": "A message claims that eating only fruits for a month can completely cure cancer without any medical treatment",
+    "language": "en",
+    "verdict": "false",
+    "category": "health_misinformation",
+    "explanation": "There is no medical proof that a fruit diet alone cures cancer. Please continue treatment advised by a real doctor and do not stop medical care because of this message.",
+    "source_name": "Ministry of Health and Family Welfare",
+    "source_url": "https://mohfw.gov.in"
+  },
+  {
+    "id": "claim_018",
+    "claim_text": "Message says a new government app will double any amount of money deposited into it within 48 hours, guaranteed by the Reserve Bank",
+    "language": "en",
+    "verdict": "false",
+    "category": "fake_scheme",
+    "explanation": "The Reserve Bank does not guarantee any app that doubles your money. This is a common fraud pattern and money deposited will likely be lost. Do not deposit money into this app.",
+    "source_name": "RBI Public Advisory",
+    "source_url": "https://rbi.org.in"
+  }
+]
