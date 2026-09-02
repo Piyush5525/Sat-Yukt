@@ -13,6 +13,7 @@ A misinformation-verification system for rural and low-literacy users in India. 
 - [Repository layout](#repository-layout)
 - [Tech stack](#tech-stack)
 - [Getting started](#getting-started)
+- [The mobile app](#the-mobile-app)
 - [API contract](#api-contract)
 - [The AI layer](#the-ai-layer)
 - [Frontend feature reference](#frontend-feature-reference)
@@ -159,9 +160,11 @@ can be consolidated later; for now the mobile app is self-contained.
 
 ## Tech stack
 
+### Website (`website/`)
+
 | Layer | Technology |
 |---|---|
-| Frontend framework | React 19 + Vite |
+| Framework | React 19 + Vite |
 | Styling | Tailwind CSS v4, CSS custom-property design tokens |
 | Routing | React Router |
 | Animation | Framer Motion |
@@ -169,12 +172,30 @@ can be consolidated later; for now the mobile app is self-contained.
 | Voice input / read-aloud | Web Speech API (`SpeechRecognition`, `speechSynthesis`) — native browser, no external service |
 | Photo OCR | `tesseract.js` — runs entirely client-side, no image ever leaves the browser |
 | QR codes | `qrcode.react` — generated locally, no third-party image service |
-| Backend framework | FastAPI (Python) |
+| Deploy target | Vercel |
+
+### Mobile app (`mobile/`)
+
+| Layer | Technology |
+|---|---|
+| Framework | Expo SDK 54 + React Native 0.81 + TypeScript |
+| Styling | NativeWind 4 (Tailwind) |
+| Navigation | React Navigation (native-stack + bottom-tabs) |
+| Voice input / read-aloud | `expo-av` recording → backend STT · `expo-speech` for read-aloud |
+| Local storage | `@react-native-async-storage/async-storage` |
+| Fonts | Poppins via `@expo-google-fonts` |
+| Mobile backend | Node + Express (`mobile/backend/`) — Twilio OTP/SMS/IVR, STT proxy |
+
+### Shared verification backend (`backend/`)
+
+| Layer | Technology |
+|---|---|
+| Framework | FastAPI (Python) |
 | Database | SQLite via SQLAlchemy |
 | Embeddings / retrieval | `sentence-transformers`, model `paraphrase-multilingual-MiniLM-L12-v2` — local, free, multilingual |
 | LLM reasoning | Google Gemini (`gemini-flash-latest`, with fallback candidates) |
 | WhatsApp channel | Green API (QR-linked WhatsApp Web session) |
-| Deploy target | Vercel (frontend) · Render / Railway (backend) |
+| Deploy target | Render / Railway |
 
 ---
 
@@ -219,6 +240,31 @@ On first run, the retriever downloads a local multilingual embedding model (~470
 
 ---
 
+## The mobile app
+
+`mobile/` is a standalone **Expo / React Native** app — the same verification
+experience as the website, built for phones with rural, low-literacy users in
+mind: a voice-first home screen, a short onboarding flow (language → phone → OTP
+→ location), a history feed, and a settings area.
+
+It ships with its own small **Node/Express backend** at `mobile/backend/` that
+the website doesn't need, because a phone can't do these in-browser:
+
+| Concern | How the mobile backend handles it |
+|---|---|
+| Speech-to-text | Proxies recordings to Google Cloud STT (→ Wispr → OpenAI Whisper fallback) |
+| Phone OTP on onboarding | Twilio Verify |
+| "No internet? Get result by SMS" | Twilio SMS — a second SMS carries the verdict once Gemini responds |
+| Voice IVR (call the number, no app needed) | Twilio `<Gather>` / `<Record>` + the same STT + Gemini pipeline |
+
+All secrets (Gemini, Twilio, STT keys) live only in `mobile/backend/.env` and are
+never bundled into the app. The client only ever reads `EXPO_PUBLIC_BACKEND_URL`.
+
+Full setup — Twilio account, STT provider, the IVR webhook, trial-account
+limits — is in [`mobile/SETUP.md`](mobile/SETUP.md).
+
+---
+
 ## API contract
 
 | Endpoint | Method | Request body | Response |
@@ -259,6 +305,8 @@ Any speech-to-text (voice) or OCR (photo) needed to produce `text` happens **cli
 ---
 
 ## Frontend feature reference
+
+_Website (`website/src/`). For the mobile app's screens and services, see [`mobile/SETUP.md`](mobile/SETUP.md)._
 
 | Component / page | Purpose |
 |---|---|
@@ -313,8 +361,8 @@ The language picker always shows native scripts (हिंदी, தமிழ�
 
 ## Known limitations
 
-- No authentication or user accounts (intentionally out of scope)
-- No IVR/voice phone bot — the "Call" channel is a direct `tel:` link, not an automated system
+- No real authentication — the mobile app's phone OTP only sets a local flag on the device, not a server session; the website has no accounts at all (intentionally out of scope)
+- On the **website**, the "Call" channel is a direct `tel:` link, not an automated system. The **mobile app** has a working Twilio voice IVR (see [`mobile/SETUP.md`](mobile/SETUP.md))
 - Confidence scoring is derived from embedding similarity, not a trained classifier — a disclosed prototype simplification
 - SQLite is used for storage; swap for managed Postgres before relying on data persistence in production
 - The curated dataset covers 18 claims — real-world coverage would need continuous expansion
